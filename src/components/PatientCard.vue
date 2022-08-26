@@ -31,6 +31,8 @@ export default {
 }
 
 .patient-card:hover {
+  background-color: rgb(135, 225, 250);
+  opacity: 95%;
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
 }

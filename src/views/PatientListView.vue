@@ -109,8 +109,13 @@ h2 {
 #page-prev {
   text-align: left;
 }
-
+#page-prev:hover {
+  color: skyblue;
+}
 #page-next {
   text-align: right;
+}
+#page-next:hover {
+  color: skyblue;
 }
 </style>
