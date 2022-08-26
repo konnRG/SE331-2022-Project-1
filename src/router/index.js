@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PatientListView from '../views/PatientListView.vue'
-import AboutView from '../views/AboutView.vue'
-import PatientLayoutView from '../views/patient/PatientLayoutView.vue'
-import PatientDetailView from '../views/patient/PatientDetailsView.vue'
-import PatientVaccineView from '../views/patient/PatientVaccineView.vue'
-import DoctorCommentView from '../views/patient/DoctorCommentView.vue'
+import PatientLayoutView from '@/views/patient/PatientLayoutView.vue'
+import PatientDetailView from '@/views/patient/PatientDetailsView.vue'
+import PatientVaccineView from '@/views/patient/PatientVaccineView.vue'
+import DoctorCommentView from '@/views/patient/DoctorCommentView.vue'
 import PatientService from '@/services/PatientService'
 import GStore from '@/store'
+import NProgress from 'nprogress'
 
 const routes = [
   {
@@ -14,11 +14,6 @@ const routes = [
     name: 'PatientList',
     component: PatientListView,
     props: (route) => ({ page: parseInt(route.query.page) || 1 })
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: AboutView
   },
   {
     path: '/patient/:id',
@@ -67,6 +62,12 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+router.beforeEach(() => {
+  NProgress.start()
+})
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

@@ -1,5 +1,5 @@
 <template>
-  <h1>Patients List View</h1>
+  <h2>Patients:</h2>
   <div class="patients">
     <PatientCard
       v-for="patient in patients"
@@ -52,7 +52,7 @@ export default {
     }
   },
   beforeRouteEnter(routeTo, routeFrom, next) {
-    PatientService.getPatients(5, parseInt(routeTo.query.page) || 1)
+    PatientService.getPatients(4, parseInt(routeTo.query.page) || 1)
       .then((response) => {
         next((comp) => {
           comp.patients = response.data
@@ -64,7 +64,7 @@ export default {
       })
   },
   beforeRouteUpdate(routeTo, routeFrom, next) {
-    PatientService.getPatients(5, parseInt(routeTo.query.page) || 1)
+    PatientService.getPatients(4, parseInt(routeTo.query.page) || 1)
       .then((response) => {
         this.patients = response.data
         this.totalPatients = response.headers['x-total-count']
@@ -76,21 +76,28 @@ export default {
   },
   computed: {
     hasNextPage() {
-      let totalPages = Math.ceil(this.totalPatients / 5)
+      let totalPages = Math.ceil(this.totalPatients / 4)
       return this.page < totalPages
     }
   }
 }
 </script>
 <style scoped>
+h2 {
+  text-align: left;
+  padding-left: 20px;
+}
 .patients {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .pagination {
   display: flex;
-  width: 390px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .pagination a {

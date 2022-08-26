@@ -4,7 +4,7 @@
     :to="{ name: 'PatientLayout', params: { id: patient.id } }"
   >
     <div class="patient-card">
-      <span>{{ patient.first_name }} on {{ patient.last_name }}</span>
+      <span>Name: {{ patient.first_name }} {{ patient.last_name }}</span>
       <h4>{{ patient.vaccine_stat }}</h4>
     </div>
   </router-link>
@@ -23,7 +23,8 @@ export default {
 <style scoped>
 .patient-card {
   padding: 20px;
-  width: 250px;
+  text-align: left;
+  width: 97%;
   cursor: pointer;
   border: 1px solid #39495c;
   margin-bottom: 18px;
