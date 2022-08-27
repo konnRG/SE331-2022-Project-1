@@ -1,23 +1,23 @@
 <template>
-  <div class="comment-container" v-if="comments">
-    <h3>Comments:</h3>
-    <ul>
+  <div class="container">
+    <div class="comment-container" v-if="comments">
+      <h3>Comments:</h3>
       <li v-for="(comment, index) in comments" :key="index">
-        {{ comment.name }}
-        <br />
-        "{{ comment.comment }}"
-        <br />
+        {{ comment.name }}: "{{ comment.comment }}"
+        <p></p>
       </li>
-    </ul>
+    </div>
+    <form class="comment-form" @submit.prevent="onSubmit">
+      <h3>Add a comment:</h3>
+      <label for="name">Doctor's name:</label>
+      <p></p>
+      <input id="name" v-model="name" />
+      <p></p>
+      <label for="newComment">Comment:</label>
+      <textarea id="newComment" v-model="newComment"></textarea>
+      <input class="button" type="submit" value="Submit" />
+    </form>
   </div>
-  <form class="comment-form" @submit.prevent="onSubmit">
-    <h3>Add a comment</h3>
-    <label for="name">Name:</label>
-    <input id="name" v-model="name" />
-    <label for="newComment">comment:</label>
-    <textarea id="newComment" v-model="newComment"></textarea>
-    <input class="button" type="submit" value="Submit" />
-  </form>
 </template>
 <script>
 export default {
@@ -49,12 +49,11 @@ export default {
 
 <style scoped>
 .comment-form {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
   width: 425px;
   padding: 20px;
-  margin: 40px;
-  border: 2px solid #d8d8d8;
+  margin: 20px;
+  border: 1px solid black;
   background-color: white;
   -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
@@ -63,7 +62,10 @@ export default {
 
 .comment-form .button {
   display: block;
-  margin: 30px auto;
+  font-family: 'Roboto', sans-serif;
+  margin: 10px auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 select {
@@ -77,25 +79,36 @@ textarea {
   width: 95%;
   height: 70px;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
 }
 .comment-container {
+  display: inline-block;
+  float: left;
   width: 425px;
   padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
   background-color: white;
   -webkit-box-shadow: 0px 2px 20px -12px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 2px 20px -12px rgba(0, 0, 0, 0.57);
   box-shadow: 2px 20px -12px rgba(0, 0, 0, 0.57);
-  margin-left: 40px;
-  border: 2px solid #d8d8d8;
+  border: 1px solid black;
+}
+.container {
+  margin-left: 260px;
+  margin-right: 260px;
 }
 
 .comment-container li {
-  margin-bottom: 30px;
+  margin-bottom: 0;
+  text-align: left;
 }
-
-ul {
-  list-style-type: none;
+#name {
+  width: 98%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 </style>

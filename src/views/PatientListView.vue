@@ -85,14 +85,14 @@ export default {
 <style scoped>
 h2 {
   text-align: left;
-  padding-left: 20px;
+  padding-left: 300px;
 }
 .patients {
   display: flex;
   flex-direction: column;
   align-items: left;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 .pagination {
   display: flex;
