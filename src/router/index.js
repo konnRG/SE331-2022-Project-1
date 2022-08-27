@@ -7,6 +7,8 @@ import DoctorCommentView from '@/views/patient/DoctorCommentView.vue'
 import PatientService from '@/services/PatientService'
 import GStore from '@/store'
 import NProgress from 'nprogress'
+import NetWorkErrorView from '@/views/NetworkErrorView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
 
 const routes = [
   {
@@ -56,6 +58,22 @@ const routes = [
         component: DoctorCommentView
       }
     ]
+  },
+  {
+    path: '/404/:resource',
+    name: '404Resource',
+    component: NotFoundView,
+    props: true
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFoundView
+  },
+  {
+    path: '/network-error',
+    name: 'NetworkError',
+    component: NetWorkErrorView
   }
 ]
 
