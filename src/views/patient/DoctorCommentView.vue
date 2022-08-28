@@ -1,4 +1,7 @@
 <template>
+  <div id="flashMessage" v-if="GStore.flashMessage">
+    {{ GStore.flashMessage }}
+  </div>
   <div class="container">
     <div class="comment-container" v-if="comments">
       <h3>Comments:</h3>
@@ -15,13 +18,15 @@
       <p></p>
       <label for="newComment">Comment:</label>
       <textarea id="newComment" v-model="newComment"></textarea>
-      <input class="button" type="submit" value="Submit" />
+      <input class="button" @click="notify" type="submit" value="Submit" />
     </form>
   </div>
 </template>
 <script>
 export default {
   name: 'DoctorComment',
+  props: ['patient'],
+  inject: ['GStore'],
   data() {
     return {
       comments: [],
@@ -30,6 +35,16 @@ export default {
     }
   },
   methods: {
+    notify() {
+      this.GStore.flashMessage = 'Comment Added.'
+      setTimeout(() => {
+        this.GStore.flashMessage = ''
+      }, 3000)
+      this.$router.push({
+        name: 'DoctorComment',
+        params: { id: this.patient.id }
+      })
+    },
     onSubmit() {
       if (this.name === '' || this.newComment === '') {
         alert('comment is incomplete. Please fill every field.')
@@ -48,6 +63,18 @@ export default {
 </script>
 
 <style scoped>
+@keyframes bluefade {
+  from {
+    background: lightskyblue;
+  }
+  to {
+    background: transparent;
+  }
+}
+#flashMessage {
+  animation-name: bluefade;
+  animation-duration: 3s;
+}
 .comment-form {
   display: inline-block;
   width: 425px;
