@@ -1,30 +1,41 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <div class="navbar">
+    <router-link to="/">+ COVID VACCINATION</router-link>
+  </div>
   <router-view />
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
+.navbar {
+  margin: -1% -1% 1% -1%;
+  overflow: hidden;
+  background-color: lightskyblue;
 }
 
-nav a {
+.navbar a {
+  float: left;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 16px 29px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 25px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+h4 {
+  font-weight: 300;
+  font-size: 17px;
+}
+span {
+  font-weight: 400;
+  font-size: 19px;
 }
 </style>

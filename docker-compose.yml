@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  web:
+    image: "panadon/se331-2022-project-1:latest"
+    ports:
+      - 8081:80

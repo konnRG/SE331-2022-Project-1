@@ -2,8 +2,6 @@
 
 # Almost Done
 
-## Check commit at dev branch
-
 ## Team members
 
 Kittisak Kaewbunmaung 632115008
