@@ -1,7 +1,7 @@
 <template>
   <router-link
     class="patient-link"
-    :to="{ name: 'PatientLayout', params: { id: patient.id } }"
+    :to="{ name: 'PatientDetails', params: { id: patient.id } }"
   >
     <div class="patient-card">
       <span>Name: {{ patient.first_name }} {{ patient.last_name }}</span>

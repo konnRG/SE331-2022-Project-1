@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  prop: {
+  props: {
     resource: {
       type: String,
       required: true,
