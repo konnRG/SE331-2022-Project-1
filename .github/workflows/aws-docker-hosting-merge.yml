@@ -37,4 +37,4 @@ jobs:
           ssh_private_key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}
           ssh_user: ${{ secrets.HOST_USER_NAME }}
           docker_compose_prefix: vue-331
-          docker_compose_filenaem: "./docker-compose.yml"
+          docker_compose_filename: "./docker-compose.yml"
