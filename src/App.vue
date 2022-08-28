@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <router-link to="/">DEV VER</router-link>
+    <router-link to="/">+ COVID VACCINATION</router-link>
   </div>
   <router-view />
 </template>
