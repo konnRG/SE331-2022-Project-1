@@ -1,24 +1,13 @@
 # se331-2022-project-1
 
-## Project setup
-```
-npm install
-```
+# Almost Done
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Team members
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Kittisak Kaewbunmaung 632115008
 
-### Lints and fixes files
-```
-npm run lint
-```
+Burussakorn Raungon 632115028
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Panadon Saikaew 632115029
+
+Links: http://107.23.190.124:8081/
